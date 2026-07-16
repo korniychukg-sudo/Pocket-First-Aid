@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB0000000000000000000100 /* PocketFirstAidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000001 /* PocketFirstAidApp.swift */; };
+		BB0000000000000000000101 /* AidWebPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000002 /* AidWebPanel.swift */; };
+		BB0000000000000000000102 /* AidLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000003 /* AidLaunchScreen.swift */; };
+		BB0000000000000000000103 /* AidTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000004 /* AidTheme.swift */; };
+		BB0000000000000000000104 /* AidIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000005 /* AidIcons.swift */; };
+		BB0000000000000000000105 /* AidContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000006 /* AidContent.swift */; };
+		BB0000000000000000000106 /* AidStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000007 /* AidStore.swift */; };
+		BB0000000000000000000107 /* AidHaptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000008 /* AidHaptics.swift */; };
+		BB0000000000000000000108 /* AidOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000009 /* AidOnboardingView.swift */; };
+		BB0000000000000000000109 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000010 /* RootView.swift */; };
+		BB0000000000000000000110 /* GuideHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000011 /* GuideHomeView.swift */; };
+		BB0000000000000000000111 /* EmergencyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000012 /* EmergencyDetailView.swift */; };
+		BB0000000000000000000112 /* CPRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000013 /* CPRView.swift */; };
+		BB0000000000000000000113 /* KitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000014 /* KitView.swift */; };
+		BB0000000000000000000114 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000015 /* LearnView.swift */; };
+		BB0000000000000000000115 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000016 /* MoreView.swift */; };
+		BB0000000000000000000199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000090 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB0000000000000000000001 /* PocketFirstAidApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketFirstAidApp.swift; sourceTree = "<group>"; };
+		BB0000000000000000000002 /* AidWebPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidWebPanel.swift; sourceTree = "<group>"; };
+		BB0000000000000000000003 /* AidLaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidLaunchScreen.swift; sourceTree = "<group>"; };
+		BB0000000000000000000004 /* AidTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidTheme.swift; sourceTree = "<group>"; };
+		BB0000000000000000000005 /* AidIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidIcons.swift; sourceTree = "<group>"; };
+		BB0000000000000000000006 /* AidContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidContent.swift; sourceTree = "<group>"; };
+		BB0000000000000000000007 /* AidStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidStore.swift; sourceTree = "<group>"; };
+		BB0000000000000000000008 /* AidHaptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidHaptics.swift; sourceTree = "<group>"; };
+		BB0000000000000000000009 /* AidOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidOnboardingView.swift; sourceTree = "<group>"; };
+		BB0000000000000000000010 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		BB0000000000000000000011 /* GuideHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideHomeView.swift; sourceTree = "<group>"; };
+		BB0000000000000000000012 /* EmergencyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyDetailView.swift; sourceTree = "<group>"; };
+		BB0000000000000000000013 /* CPRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRView.swift; sourceTree = "<group>"; };
+		BB0000000000000000000014 /* KitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitView.swift; sourceTree = "<group>"; };
+		BB0000000000000000000015 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		BB0000000000000000000016 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		BB0000000000000000000090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB0000000000000000000091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB0000000000000000000092 /* Pocket First Aid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket First Aid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB0000000000000000000200 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB0000000000000000000300 = {
+			isa = PBXGroup;
+			children = (
+				BB0000000000000000000301 /* Pocket First Aid */,
+				BB0000000000000000000302 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB0000000000000000000301 /* Pocket First Aid */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000000000000000000001 /* PocketFirstAidApp.swift */,
+				BB0000000000000000000002 /* AidWebPanel.swift */,
+				BB0000000000000000000003 /* AidLaunchScreen.swift */,
+				BB0000000000000000000004 /* AidTheme.swift */,
+				BB0000000000000000000005 /* AidIcons.swift */,
+				BB0000000000000000000006 /* AidContent.swift */,
+				BB0000000000000000000007 /* AidStore.swift */,
+				BB0000000000000000000008 /* AidHaptics.swift */,
+				BB0000000000000000000009 /* AidOnboardingView.swift */,
+				BB0000000000000000000010 /* RootView.swift */,
+				BB0000000000000000000011 /* GuideHomeView.swift */,
+				BB0000000000000000000012 /* EmergencyDetailView.swift */,
+				BB0000000000000000000013 /* CPRView.swift */,
+				BB0000000000000000000014 /* KitView.swift */,
+				BB0000000000000000000015 /* LearnView.swift */,
+				BB0000000000000000000016 /* MoreView.swift */,
+				BB0000000000000000000090 /* Assets.xcassets */,
+				BB0000000000000000000091 /* Info.plist */,
+			);
+			path = "Pocket First Aid";
+			sourceTree = "<group>";
+		};
+		BB0000000000000000000302 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000000000000000000092 /* Pocket First Aid.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB0000000000000000000400 /* Pocket First Aid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB0000000000000000000500 /* Build configuration list for PBXNativeTarget "Pocket First Aid" */;
+			buildPhases = (
+				BB0000000000000000000600 /* Sources */,
+				BB0000000000000000000200 /* Frameworks */,
+				BB0000000000000000000601 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pocket First Aid";
+			productName = "Pocket First Aid";
+			productReference = BB0000000000000000000092 /* Pocket First Aid.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB0000000000000000000700 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					BB0000000000000000000400 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = BB0000000000000000000501 /* Build configuration list for PBXProject "Pocket First Aid" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB0000000000000000000300;
+			productRefGroup = BB0000000000000000000302 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB0000000000000000000400 /* Pocket First Aid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB0000000000000000000601 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0000000000000000000199 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB0000000000000000000600 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0000000000000000000100 /* PocketFirstAidApp.swift in Sources */,
+				BB0000000000000000000101 /* AidWebPanel.swift in Sources */,
+				BB0000000000000000000102 /* AidLaunchScreen.swift in Sources */,
+				BB0000000000000000000103 /* AidTheme.swift in Sources */,
+				BB0000000000000000000104 /* AidIcons.swift in Sources */,
+				BB0000000000000000000105 /* AidContent.swift in Sources */,
+				BB0000000000000000000106 /* AidStore.swift in Sources */,
+				BB0000000000000000000107 /* AidHaptics.swift in Sources */,
+				BB0000000000000000000108 /* AidOnboardingView.swift in Sources */,
+				BB0000000000000000000109 /* RootView.swift in Sources */,
+				BB0000000000000000000110 /* GuideHomeView.swift in Sources */,
+				BB0000000000000000000111 /* EmergencyDetailView.swift in Sources */,
+				BB0000000000000000000112 /* CPRView.swift in Sources */,
+				BB0000000000000000000113 /* KitView.swift in Sources */,
+				BB0000000000000000000114 /* LearnView.swift in Sources */,
+				BB0000000000000000000115 /* MoreView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BB0000000000000000000800 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB0000000000000000000801 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		BB0000000000000000000802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Pocket First Aid/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pocketfirstaid.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BB0000000000000000000803 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Pocket First Aid/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pocketfirstaid.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB0000000000000000000500 /* Build configuration list for PBXNativeTarget "Pocket First Aid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB0000000000000000000802 /* Debug */,
+				BB0000000000000000000803 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB0000000000000000000501 /* Build configuration list for PBXProject "Pocket First Aid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB0000000000000000000800 /* Debug */,
+				BB0000000000000000000801 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB0000000000000000000700 /* Project object */;
+}

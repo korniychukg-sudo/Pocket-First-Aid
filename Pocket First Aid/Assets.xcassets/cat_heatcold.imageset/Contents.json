@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "cat_heatcold.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

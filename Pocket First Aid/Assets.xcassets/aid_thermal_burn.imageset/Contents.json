@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "aid_thermal_burn.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

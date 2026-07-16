@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "cat_burns.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
