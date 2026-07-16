@@ -73,6 +73,8 @@ struct MoreView: View {
                         label: "Guides read", value: "\(store.topicsOpened.count) of \(AidContent.emergencies.count)")
             progressRow(icon: AnyView(AidIcon(shape: AidStarShape(), size: 20, color: AidTheme.amber, weight: 1.8)),
                         label: "Best quiz round", value: store.quizRounds > 0 ? "\(store.quizBestScore) of 10" : "Not played yet")
+            progressRow(icon: AnyView(AidIcon(shape: AidSparkleShape(), size: 20, color: AidTheme.slate, weight: 1.8)),
+                        label: "Myths busted", value: "\(store.mythsBusted.count) of \(AidContentPlus.myths.count)")
             progressRow(icon: AnyView(AidIcon(shape: KitBoxShape(), size: 20, color: AidTheme.sage, weight: 1.8)),
                         label: "Kit items stocked",
                         value: "\(AidContent.kits.reduce(0) { $0 + store.checkedCount(kit: $1.id) }) of \(AidContent.kits.reduce(0) { $0 + $1.items.count })")
@@ -120,7 +122,7 @@ struct MoreView: View {
                 .foregroundColor(AidTheme.subtle)
                 .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
-            Text("Pocket First Aid 1.0")
+            Text("Pocket First Aid 1.1")
                 .font(.system(size: 12, weight: .medium, design: .rounded))
                 .foregroundColor(AidTheme.subtle.opacity(0.7))
         }

@@ -7,6 +7,7 @@ final class AidStore: ObservableObject {
     @Published private(set) var quizBestScore: Int
     @Published private(set) var quizRounds: Int
     @Published private(set) var topicsOpened: Set<String>
+    @Published private(set) var mythsBusted: Set<Int>   // myth ids answered correctly
 
     private let defaults = UserDefaults.standard
 
@@ -15,6 +16,7 @@ final class AidStore: ObservableObject {
         static let best = "aid.quizBest"
         static let rounds = "aid.quizRounds"
         static let opened = "aid.topicsOpened"
+        static let myths = "aid.mythsBusted"
     }
 
     init() {
@@ -27,6 +29,7 @@ final class AidStore: ObservableObject {
         quizBestScore = defaults.integer(forKey: Keys.best)
         quizRounds = defaults.integer(forKey: Keys.rounds)
         topicsOpened = Set(defaults.stringArray(forKey: Keys.opened) ?? [])
+        mythsBusted = Set((defaults.array(forKey: Keys.myths) as? [Int]) ?? [])
     }
 
     // MARK: - Kits
@@ -64,6 +67,14 @@ final class AidStore: ObservableObject {
         }
         defaults.set(quizBestScore, forKey: Keys.best)
         defaults.set(quizRounds, forKey: Keys.rounds)
+    }
+
+    // MARK: - Myths
+
+    func recordMyth(id: Int, correct: Bool) {
+        guard correct, !mythsBusted.contains(id) else { return }
+        mythsBusted.insert(id)
+        defaults.set(Array(mythsBusted), forKey: Keys.myths)
     }
 
     // MARK: - Reading progress

@@ -24,6 +24,8 @@
 		BB0000000000000000000114 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000015 /* LearnView.swift */; };
 		BB0000000000000000000115 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000016 /* MoreView.swift */; };
 		BB0000000000000000000199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000090 /* Assets.xcassets */; };
+		BB0000000000000000000117 /* AidContentPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000017 /* AidContentPlus.swift */; };
+		BB0000000000000000000118 /* GuidedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000018 /* GuidedStepsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		BB0000000000000000000090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB0000000000000000000091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB0000000000000000000092 /* Pocket First Aid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket First Aid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0000000000000000000017 /* AidContentPlus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidContentPlus.swift; sourceTree = "<group>"; };
+		BB0000000000000000000018 /* GuidedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedStepsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				BB0000000000000000000014 /* KitView.swift */,
 				BB0000000000000000000015 /* LearnView.swift */,
 				BB0000000000000000000016 /* MoreView.swift */,
+				BB0000000000000000000017 /* AidContentPlus.swift */,
+				BB0000000000000000000018 /* GuidedStepsView.swift */,
 				BB0000000000000000000090 /* Assets.xcassets */,
 				BB0000000000000000000091 /* Info.plist */,
 			);
@@ -185,6 +191,8 @@
 				BB0000000000000000000113 /* KitView.swift in Sources */,
 				BB0000000000000000000114 /* LearnView.swift in Sources */,
 				BB0000000000000000000115 /* MoreView.swift in Sources */,
+				BB0000000000000000000117 /* AidContentPlus.swift in Sources */,
+				BB0000000000000000000118 /* GuidedStepsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +273,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -275,7 +283,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pocketfirstaid.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -294,7 +302,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -304,7 +312,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pocketfirstaid.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

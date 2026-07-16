@@ -5,6 +5,7 @@ struct EmergencyDetailView: View {
     let emergency: AidEmergency
     @EnvironmentObject var store: AidStore
     @Environment(\.presentationMode) private var presentationMode
+    @State private var showGuided = false
 
     private var category: AidCategory {
         AidContent.category(emergency.categoryID)
@@ -30,18 +31,23 @@ struct EmergencyDetailView: View {
                 }
 
                 HStack {
-                    VStack(alignment: .leading, spacing: 2) {
+                    VStack(alignment: .leading, spacing: 5) {
                         Text(emergency.title)
                             .font(.system(size: 27, weight: .bold, design: .rounded))
                             .foregroundColor(AidTheme.ink)
-                        Text(category.title)
-                            .font(.system(size: 14, weight: .medium, design: .rounded))
-                            .foregroundColor(AidTheme.subtle)
+                        HStack(spacing: 7) {
+                            severityBadge
+                            Text(category.title)
+                                .font(.system(size: 13, weight: .medium, design: .rounded))
+                                .foregroundColor(AidTheme.subtle)
+                        }
                     }
                     Spacer()
                 }
 
                 callBanner
+
+                guidedButton
 
                 VStack(spacing: 12) {
                     ForEach(Array(emergency.steps.enumerated()), id: \.offset) { pair in
@@ -50,6 +56,10 @@ struct EmergencyDetailView: View {
                 }
 
                 dontsCard
+
+                if !emergency.aftercare.isEmpty {
+                    aftercareCard
+                }
 
                 Text(AidContent.disclaimer)
                     .font(.system(size: 11, weight: .medium, design: .rounded))
@@ -67,6 +77,84 @@ struct EmergencyDetailView: View {
         .background(AidTheme.background.ignoresSafeArea())
         .navigationBarHidden(true)
         .onAppear { store.markOpened(emergency.id) }
+        .fullScreenCover(isPresented: $showGuided) {
+            GuidedStepsView(emergency: emergency)
+        }
+    }
+
+    private var severityBadge: some View {
+        Text(emergency.severity.title.uppercased())
+            .font(.system(size: 10, weight: .heavy, design: .rounded))
+            .foregroundColor(emergency.severity.tint)
+            .padding(.horizontal, 9)
+            .padding(.vertical, 4)
+            .background(Capsule().fill(emergency.severity.soft))
+    }
+
+    private var guidedButton: some View {
+        Button(action: {
+            AidHaptics.tap()
+            showGuided = true
+        }) {
+            HStack(spacing: 12) {
+                ZStack {
+                    Circle().fill(Color.white.opacity(0.2)).frame(width: 40, height: 40)
+                    AidIcon(shape: AidChevronShape(pointRight: true), size: 18, color: .white, weight: 2.6)
+                }
+                VStack(alignment: .leading, spacing: 1) {
+                    Text("Guided Mode")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+                    Text("One big step at a time, hands-free pace")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .foregroundColor(.white.opacity(0.85))
+                }
+                Spacer()
+                Text("\(emergency.steps.count) steps")
+                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                    .foregroundColor(.white.opacity(0.9))
+            }
+            .padding(14)
+            .background(
+                ZStack {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .fill(AidTheme.calmGradient)
+                    Image("texture_soft")
+                        .resizable(resizingMode: .tile)
+                        .opacity(0.4)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                }
+                .shadow(color: AidTheme.slate.opacity(0.3), radius: 8, x: 0, y: 4)
+            )
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+
+    private var aftercareCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 9) {
+                AidIcon(shape: AidSparkleShape(), size: 20, color: AidTheme.sage, weight: 1.9)
+                Text("Afterward")
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .foregroundColor(AidTheme.ink)
+            }
+            ForEach(Array(emergency.aftercare.enumerated()), id: \.offset) { pair in
+                HStack(alignment: .top, spacing: 10) {
+                    AidIcon(shape: AidCheckShape(), size: 13, color: AidTheme.sage, weight: 2.4)
+                        .padding(.top, 3)
+                    Text(pair.element)
+                        .font(.system(size: 14, weight: .medium, design: .rounded))
+                        .foregroundColor(AidTheme.subtle)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(16)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(AidTheme.sageSoft)
+        )
     }
 
     private var callBanner: some View {

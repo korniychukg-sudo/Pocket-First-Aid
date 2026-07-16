@@ -3,6 +3,7 @@ import SwiftUI
 struct GuideHomeView: View {
     @EnvironmentObject var store: AidStore
     @State private var query = ""
+    @State private var pulse = false
 
     private var searchResults: [AidEmergency] {
         let trimmed = query.trimmingCharacters(in: .whitespaces)
@@ -25,6 +26,15 @@ struct GuideHomeView: View {
                 if !query.trimmingCharacters(in: .whitespaces).isEmpty {
                     searchList
                 } else {
+                    quickAccessRow
+                    featuredCard
+                    HStack {
+                        Text("Browse by Category")
+                            .font(.system(size: 19, weight: .bold, design: .rounded))
+                            .foregroundColor(AidTheme.ink)
+                        Spacer()
+                    }
+                    .padding(.top, 2)
                     categoryGrid
                 }
                 Spacer().frame(height: 8)
@@ -70,8 +80,18 @@ struct GuideHomeView: View {
     private var emergencyBanner: some View {
         HStack(spacing: 14) {
             ZStack {
+                Circle()
+                    .stroke(Color.white.opacity(0.35), lineWidth: 2)
+                    .frame(width: 62, height: 62)
+                    .scaleEffect(pulse ? 1.14 : 0.96)
+                    .opacity(pulse ? 0.15 : 0.7)
                 Circle().fill(Color.white.opacity(0.18)).frame(width: 54, height: 54)
                 AidIcon(shape: PhoneShape(), size: 28, color: .white, weight: 2.0)
+            }
+            .onAppear {
+                withAnimation(.easeInOut(duration: 1.2).repeatForever(autoreverses: false)) {
+                    pulse = true
+                }
             }
             VStack(alignment: .leading, spacing: 3) {
                 Text("Real emergency?")
@@ -167,37 +187,138 @@ struct GuideHomeView: View {
         .aidCard(padding: 12)
     }
 
+    private var quickAccessRow: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Act Fast")
+                .font(.system(size: 19, weight: .bold, design: .rounded))
+                .foregroundColor(AidTheme.ink)
+            HStack(spacing: 10) {
+                ForEach(AidContentPlus.quickAccessIDs, id: \.self) { id in
+                    if let e = AidContent.emergencies.first(where: { $0.id == id }) {
+                        NavigationLink(destination: EmergencyDetailView(emergency: e)) {
+                            VStack(spacing: 7) {
+                                Image(e.art)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 62, height: 62)
+                                    .clipShape(Circle())
+                                    .overlay(Circle().stroke(AidTheme.card, lineWidth: 3))
+                                    .shadow(color: AidTheme.ink.opacity(0.10), radius: 5, x: 0, y: 3)
+                                Text(shortTitle(e))
+                                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+                                    .foregroundColor(AidTheme.ink)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.75)
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func shortTitle(_ e: AidEmergency) -> String {
+        switch e.id {
+        case "choking-adult": return "Choking"
+        case "severe-bleeding": return "Bleeding"
+        case "heart-attack": return "Heart Attack"
+        case "stroke": return "Stroke"
+        default: return e.title
+        }
+    }
+
+    private var featuredCard: some View {
+        let featured = AidContentPlus.featuredEmergency()
+        return NavigationLink(destination: EmergencyDetailView(emergency: featured)) {
+            ZStack(alignment: .bottomLeading) {
+                Image(featured.art)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 168)
+                    .clipped()
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.black.opacity(0.0), Color.black.opacity(0.45)]),
+                    startPoint: .center, endPoint: .bottom
+                )
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("GUIDE OF THE DAY")
+                        .font(.system(size: 10, weight: .heavy, design: .rounded))
+                        .foregroundColor(.white.opacity(0.85))
+                        .tracking(1.2)
+                    HStack(spacing: 8) {
+                        Text(featured.title)
+                            .font(.system(size: 21, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                        Text(featured.severity.title.uppercased())
+                            .font(.system(size: 9, weight: .heavy, design: .rounded))
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 3)
+                            .background(Capsule().fill(featured.severity.tint))
+                    }
+                    Text("Two quiet minutes today - real confidence tomorrow.")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .foregroundColor(.white.opacity(0.85))
+                }
+                .padding(14)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .shadow(color: AidTheme.ink.opacity(0.12), radius: 10, x: 0, y: 5)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+
     private var categoryGrid: some View {
         let columns = Array(repeating: GridItem(.flexible(), spacing: 12), count: isWide ? 3 : 2)
         return LazyVGrid(columns: columns, spacing: 12) {
             ForEach(AidContent.categories) { cat in
                 NavigationLink(destination: CategoryView(category: cat)) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        Image(cat.art)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(height: 96)
-                            .clipped()
-                        VStack(alignment: .leading, spacing: 3) {
-                            Text(cat.title)
-                                .font(.system(size: 15, weight: .semibold, design: .rounded))
-                                .foregroundColor(AidTheme.ink)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.8)
-                            Text("\(AidContent.emergencies(in: cat.id).count) guides")
-                                .font(.system(size: 12, weight: .medium, design: .rounded))
-                                .foregroundColor(AidTheme.subtle)
-                        }
-                        .padding(12)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(AidTheme.card)
-                    }
-                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-                    .shadow(color: AidTheme.ink.opacity(0.06), radius: 8, x: 0, y: 4)
+                    categoryCell(cat)
                 }
                 .buttonStyle(PlainButtonStyle())
             }
         }
+    }
+
+    private func categoryCell(_ cat: AidCategory) -> some View {
+        let guides = AidContent.emergencies(in: cat.id)
+        let read = guides.filter { store.topicsOpened.contains($0.id) }.count
+        return VStack(alignment: .leading, spacing: 0) {
+            Image(cat.art)
+                .resizable()
+                .scaledToFill()
+                .frame(height: 96)
+                .clipped()
+            VStack(alignment: .leading, spacing: 6) {
+                Text(cat.title)
+                    .font(.system(size: 15, weight: .semibold, design: .rounded))
+                    .foregroundColor(AidTheme.ink)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                HStack(spacing: 8) {
+                    GeometryReader { geo in
+                        ZStack(alignment: .leading) {
+                            Capsule().fill(cat.soft)
+                            Capsule()
+                                .fill(cat.tint)
+                                .frame(width: max(read == 0 ? 0 : 6, geo.size.width * CGFloat(Double(read) / Double(max(guides.count, 1)))))
+                        }
+                    }
+                    .frame(height: 6)
+                    Text("\(read)/\(guides.count)")
+                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .foregroundColor(read == guides.count ? cat.tint : AidTheme.subtle)
+                }
+            }
+            .padding(12)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(AidTheme.card)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .shadow(color: AidTheme.ink.opacity(0.06), radius: 8, x: 0, y: 4)
     }
 }
 
@@ -237,7 +358,7 @@ struct CategoryView: View {
                     }
                     Spacer()
                 }
-                ForEach(AidContent.emergencies(in: category.id)) { emergency in
+                ForEach(AidContent.emergencies(in: category.id).sorted { $0.severity < $1.severity }) { emergency in
                     NavigationLink(destination: EmergencyDetailView(emergency: emergency)) {
                         HStack(spacing: 12) {
                             Image(emergency.art)
@@ -245,19 +366,17 @@ struct CategoryView: View {
                                 .scaledToFill()
                                 .frame(width: 56, height: 56)
                                 .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                            VStack(alignment: .leading, spacing: 3) {
+                            VStack(alignment: .leading, spacing: 4) {
                                 Text(emergency.title)
                                     .font(.system(size: 16, weight: .semibold, design: .rounded))
                                     .foregroundColor(AidTheme.ink)
-                                HStack(spacing: 5) {
-                                    if emergency.callFirst {
-                                        Text("CALL FIRST")
-                                            .font(.system(size: 9, weight: .heavy, design: .rounded))
-                                            .foregroundColor(.white)
-                                            .padding(.horizontal, 7)
-                                            .padding(.vertical, 3)
-                                            .background(Capsule().fill(AidTheme.primary))
-                                    }
+                                HStack(spacing: 6) {
+                                    Text(emergency.severity.title.uppercased())
+                                        .font(.system(size: 9, weight: .heavy, design: .rounded))
+                                        .foregroundColor(emergency.severity.tint)
+                                        .padding(.horizontal, 7)
+                                        .padding(.vertical, 3)
+                                        .background(Capsule().fill(emergency.severity.soft))
                                     Text("\(emergency.steps.count) steps")
                                         .font(.system(size: 12, weight: .medium, design: .rounded))
                                         .foregroundColor(AidTheme.subtle)

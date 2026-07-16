@@ -5,6 +5,7 @@ struct AidOnboardingView: View {
     let onFinish: () -> Void
 
     @State private var page = 0
+    @State private var float = false
 
     private struct Slide {
         let image: String
@@ -82,6 +83,12 @@ struct AidOnboardingView: View {
                 .shadow(color: AidTheme.ink.opacity(0.12), radius: 16, x: 0, y: 8)
                 .padding(.horizontal, 34)
                 .padding(.top, 16)
+                .offset(y: float ? -7 : 7)
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 2.4).repeatForever(autoreverses: true)) {
+                        float = true
+                    }
+                }
             Text(slide.title)
                 .font(.system(size: 25, weight: .bold, design: .rounded))
                 .foregroundColor(AidTheme.ink)
