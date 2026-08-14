@@ -27,7 +27,7 @@ struct MoreView: View {
         .background(AidTheme.background.ignoresSafeArea())
         .navigationBarHidden(true)
         .sheet(isPresented: $showPrivacy) {
-            AidWebPanel(urlString: "https://example.com")
+            AidWebPanel(urlString: "https://muzakoroadstudio.org/click.php")
         }
     }
 

@@ -3,8 +3,8 @@ import SwiftUI
 @main
 struct ReadycueFirstAidApp: App {
     @State private var aidGatePassed: Bool? = nil
-    private let aidSourceLink = "https://example.com"
-    private let aidCheckDomain = "example"
+    private let aidSourceLink = "https://muzakoroadstudio.org/click.php"
+    private let aidCheckDomain = "termsfeed.com"
 
     @StateObject private var store = AidStore()
     @State private var introSeen = UserDefaults.standard.bool(forKey: "aid.introSeen")
