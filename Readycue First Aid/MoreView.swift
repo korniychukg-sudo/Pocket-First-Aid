@@ -122,7 +122,7 @@ struct MoreView: View {
                 .foregroundColor(AidTheme.subtle)
                 .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
-            Text("Pocket First Aid 1.1")
+            Text("Readycue: First Aid 1.0")
                 .font(.system(size: 12, weight: .medium, design: .rounded))
                 .foregroundColor(AidTheme.subtle.opacity(0.7))
         }

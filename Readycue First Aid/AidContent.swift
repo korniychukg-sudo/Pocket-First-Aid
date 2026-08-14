@@ -48,7 +48,7 @@ struct EmergencyNumber: Identifiable {
 
 enum AidContent {
 
-    static let disclaimer = "Pocket First Aid provides general educational information based on widely accepted first aid guidelines. It is not medical advice and does not replace professional training or emergency services. In any serious situation, call your local emergency number immediately."
+    static let disclaimer = "Readycue: First Aid provides general educational information based on widely accepted first aid guidelines. It is not medical advice and does not replace professional training or emergency services. In any serious situation, call your local emergency number immediately."
 
     static let categories: [AidCategory] = [
         AidCategory(id: "bleeding", title: "Bleeding & Wounds", subtitle: "Cuts, scrapes and heavy bleeding", art: "cat_bleeding", tint: AidTheme.primary, soft: AidTheme.peach),

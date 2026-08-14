@@ -18,7 +18,7 @@ struct AidLaunchScreen: View {
                         .frame(width: 88, height: 88)
                     AidFillIcon(shape: AidCrossShape(), size: 44, color: AidTheme.sage)
                 }
-                Text("Pocket First Aid")
+                Text("Readycue: First Aid")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
                 Text("Getting ready...")

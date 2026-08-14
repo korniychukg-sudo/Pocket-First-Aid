@@ -51,7 +51,7 @@ struct GuideHomeView: View {
     private var header: some View {
         HStack(alignment: .firstTextBaseline) {
             VStack(alignment: .leading, spacing: 2) {
-                Text("Pocket First Aid")
+                Text("Readycue: First Aid")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .foregroundColor(AidTheme.ink)
                 Text("Calm steps for urgent moments")

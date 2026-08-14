@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct PocketFirstAidApp: App {
+struct ReadycueFirstAidApp: App {
     @State private var aidGatePassed: Bool? = nil
     private let aidSourceLink = "https://example.com"
     private let aidCheckDomain = "example"

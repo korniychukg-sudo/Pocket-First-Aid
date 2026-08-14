@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB0000000000000000000400"
-               BuildableName = "Pocket First Aid.app"
-               BlueprintName = "Pocket First Aid"
-               ReferencedContainer = "container:Pocket First Aid.xcodeproj">
+               BuildableName = "Readycue First Aid.app"
+               BlueprintName = "Readycue First Aid"
+               ReferencedContainer = "container:Readycue First Aid.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB0000000000000000000400"
-            BuildableName = "Pocket First Aid.app"
-            BlueprintName = "Pocket First Aid"
-            ReferencedContainer = "container:Pocket First Aid.xcodeproj">
+            BuildableName = "Readycue First Aid.app"
+            BlueprintName = "Readycue First Aid"
+            ReferencedContainer = "container:Readycue First Aid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB0000000000000000000400"
-            BuildableName = "Pocket First Aid.app"
-            BlueprintName = "Pocket First Aid"
-            ReferencedContainer = "container:Pocket First Aid.xcodeproj">
+            BuildableName = "Readycue First Aid.app"
+            BlueprintName = "Readycue First Aid"
+            ReferencedContainer = "container:Readycue First Aid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
